@@ -1,6 +1,6 @@
 = Bubble
 
-Bubble is a library for crating HTML from basic Ruby data structures.
+Bubble is a library for creating HTML from basic Ruby data structures.
 
 == Installation
 
