@@ -1,8 +1,58 @@
-= bubble
+= Bubble
 
-Description goes here.
+Bubble is a library for crating HTML from basic Ruby data structures.
 
-== Contributing to bubble
+== Installation
+
+Bubble is a gem.
+
+    gem install bubble
+
+== Examples
+
+Bubble can convert arrays and symbols into tags and hashes into attributes.
+
+If you want to create simple tags:
+
+    b = Bubble.new([:h1, "Entitling!"])
+    b.to_html
+    # => "<h1>Entitling!</h1>"
+
+Or if you want a tag with attributes:
+
+    link = Bubble.new([:a, {:href => "/images/free_cat.jpg"}, "Free Cat!"])
+    link.to_html
+    # => "<a href="/images/free_cat.jpg">Free Cat!</a>"
+
+Empty tags:
+
+    sad_and_alone = Bubble.new([:p])
+    sad_and_alone.to_html
+    # => "<p />"
+
+Or even nested tags:
+
+    blurb = Bubble.new([:marquee, {:style => 'font-weight: bold'}, [:font, "Arial",[:size, "smaller", [:b, "Made with DreamWeaver!"]]]])
+    blurb.to_html
+    # => "<marquee style="font-weight: bold"><font><Arial><size><smaller><b>Made with DreamWeaver!</b></smaller></size></Arial></font></marquee>"
+
+Since Bubble objects are just repurposed Arrays and Hashes, you can perform all the same operations on them.
+
+    b = Bubble.new
+    b[0] = :p
+    b << "Parachute Pants!"
+    b += [{:class => "hammer#{Time.new.class.name.downcase}"}]
+    b.last.merge!(:action => 'Stop!')
+    b.to_html
+    # => "<p class="hammertime" action="Stop!">Parachute Pants!</p>"
+
+== Purpose
+
+While it's certainly conceivable that you could build an entire templating system around Bubble, it's intended to create and programatically maniuplate small snippets of HTML.
+
+Ruby has an excellent library for working with arrays and hashes, and Bubble lets you work within the standard library instead of trying to wrangle raw HTML into a manipulable format.
+
+== Contributing to Bubble
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
@@ -14,6 +64,5 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2011 Eric Budd. See LICENSE.txt for
-further details.
+Copyright (c) 2011 Eric Budd. See LICENSE.txt for further details.
 
