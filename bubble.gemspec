@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "bubble.gemspec",
     "lib/bubble.rb",
     "spec/bubble_spec.rb",
     "spec/spec_helper.rb"
