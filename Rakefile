@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "bubble"
   gem.homepage = "http://github.com/Calamitous/bubble"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Bubble is a library for creating HTML from basic Ruby data structures.}
+  gem.description = %Q{Bubble is a library for creating HTML from basic Ruby data structures.}
   gem.email = "eric.b.budd@gmail.com"
   gem.authors = ["Eric Budd"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
